@@ -33,5 +33,7 @@ OVERALL? NOT BAD
 So what did work and what didn't?
 1. It worked well with small loads, but didn't with high loads. I looks like I forgot that a load that on average consumes 2 A, can draw pulses of 15 A. So the controller wasn't fast enough to deal with 15 A spikes, the voltage sagged a lot during these, maybe by 30%. In the end, the voltage controll code looped ones every 25us (about 40kHz), by it should probably respond every MOSFET cycle to be very responsive (so 200kHz). I'm not sure whether the cheap STM32 will handle it. 
 2. Voltage controll (just a digital PID) worked great with no load and with not complicated loads.
+3. I didn't use synchronous rectification - I used the diode instead. As it turns out, a hobby project that is too complicated may not be the best idea. 
+4. I did some design mistakes - for example, the converter has no way of cutting output voltage to 0. There's always a diode that can feed the current form input to output.
 
 
