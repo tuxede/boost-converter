@@ -37,7 +37,7 @@ So what did work and what didn't?
 4. I did some design mistakes - for example, the converter has no way of cutting output voltage to 0. There's always a diode that can feed the current form input to output.
 
 **6. Conclusions**
-1. It is totally doable. I may be hard if you are 20 years behind and still micros like Atmega328. They have slow clocks, slow timers that can't easily produce fast PWM, very slow ADCs and so on. That means than fast responding control loop may be in fact impossible to implement. But even the STM32G030 had 64Mhz timers and ADC sample rate of about 1Mhz. 
+1. It is totally doable. I may be hard if you are 20 years behind and still use micros like Atmega328. They have slow clocks, slow timers that can't easily produce fast PWM, very slow ADCs and so on. That means than fast responding control loop may be in fact impossible to implement. But even the STM32G030 had 64Mhz timers and ADC sample rate of about 1Mhz. 
 2. My component choice and overall design was dictated by high current and small size. If you go bigger, slower and less power-dense, things should turn out a lot better. Because I used low inductance and capacitances, rate of change of the voltages were high and hard to controll. I actually later soldered on additional caps to make things a bit better.
 
 
